@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/imagenes/logo.png">
+    <title>Programación e Historia - Inicio</title>
+</head>
+<body class="body-day">
+    
+    <!-- Navegación principal -->
+    <nav>
+        <a href="index.html" aria-label="Volver al inicio">
+            <!-- Logo en SVG -->
+            <svg width="200" height="90">
+                <rect x="45" y="5" width="80" height="50" class="mon1" fill="#767a81de" stroke="#2F3645" stroke-width="2"></rect>
+                <rect x="50" y="10" width="70" height="40" class="mon2" fill="#000000" stroke="#2F3645" stroke-width="2"></rect>
+                <rect x="75" y="55" width="20" height="10" class="mon1" fill="#767a81de" stroke="#2F3645" stroke-width="2"></rect>
+
+                <polygon points="50 70,120 70,130 80,40 80" fill="#767a81de" stroke="#2F3645" stroke-width="2" class="mon1"></polygon>
+                <polygon points="55 72,115 72,122 78,48 78" fill="#000000" class="mon2" stroke="#2F3645"></polygon>
+
+                <line x1="55" y1="19" x2="100" y2="19" stroke="transparent" stroke-width="3" class="cod"></line>
+                <line x1="55" y1="24" x2="100" y2="24" stroke="transparent" stroke-width="3" class="cod"></line>
+                <line x1="55" y1="29" x2="70" y2="29" stroke="transparent" stroke-width="3" class="cod"></line>
+                <line x1="55" y1="33" x2="115" y2="33" stroke="transparent" stroke-width="3" class="cod"></line>
+                <line x1="55" y1="38" x2="115" y2="38" stroke="transparent" stroke-width="3" class="cod"></line>
+            </svg>
+        </a>
+
+        <!-- Menú de navegación -->
+        <ul class="menu">
+            <li class="item-menu"><a class="item-link" href="historia.html">HISTORIA</a></li>
+            <li class="item-menu"><a class="item-link" href="poneraprueba.html">JUGUEMOS</a></li>
+        </ul>
+        <button id="switch-tema" aria-label="Toggle de Theme" data-title-day="Click para cambiar a tema noche" data-title-night="Click para cambiar a tema día" title="Click para cambiar a tema noche">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M380-880q83 0 156 31.5T663-763q54 54 85.5 127T780-480q0 83-31.5 156T663-197q-54 54-127 85.5T380-80q-53 0-103.5-13.5T180-134q93-54 146.5-146T380-480q0-108-53.5-200T180-826q46-27 96.5-40.5T380-880Z"/></svg>
+        </button>
+    </nav>
+
+    <!-- Encabezado principal -->
+    <header>
+        <h1 class="titulo-blanco">PROGRAMACION E HISTORIA</h1>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <h2>CONTENIDO</h2>
+
+        <!-- Sección de tarjetas -->
+        <section class="contenedor-padre">
+            
+            <!-- Tarjeta de Historia -->
+            <article class="tarjeta" id="tarjeta1">
+                <img class="img-tarjeta" src="./assets/imagenes/historia-programacion.jpg" alt="Computadora antigua con teclado vintage">
+                <p class="desc-tarjeta">Conozcamos un poco sobre la historia de la programación</p>
+                <a class="boton-ver" href="historia.html">Ir a Historia</a>
+            </article>
+
+            <!-- Tarjeta de Juego -->
+            <article class="tarjeta" id="tarjeta2">
+                <img class="img-tarjeta" src="./assets/imagenes/img2.jpg" alt="Pantalla con código de programación">
+                <p class="desc-tarjeta">Vamos a jugar un poco utilizando métodos aprendidos en clase</p>
+                <a class="boton-ver" href="poneraprueba.html">Ir a juego</a>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-izq">
+            <img class="logo" src="./assets/imagenes/logo.png" alt="Logo del sitio">
+            <h3 class="titulo-blanco titulo-foot">PROGRAMACION <br> E <br> HISTORIA</h3>
+        </div>
+        <div>Sitio con fines educativos - Creado por M.Victoria Lopez</div>
+    </footer>
+
+    <!-- Carga del JavaScript -->
+    <script src="./script.js"></script>
+</body>
+</html>

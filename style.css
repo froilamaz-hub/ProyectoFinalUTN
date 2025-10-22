@@ -1,0 +1,835 @@
+/* Importación de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Variables CSS para colores */
+:root {
+    --colorLight: #FFFFFF;
+    --colorDark: #000000;
+    --colorDarkTransparent: #2f3645b3;
+    --colorDarkTransparent2: #767a81de;
+    /* ---------- Éstos 3 son iguales, pero se hacen por separado por si se quieren modificar individualmente los elementos ---------- */
+    --footer-color: #2f3645;
+    --btn-color:#2f3645;
+    --fondovideo-color:#2f3645;
+    --fondovideo-color-noche: #808080;
+}
+
+/* Reset básico */
+* {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+p {
+    color: var(--colorLight);
+}
+
+h2 {
+    text-shadow: 1px 1px #FFFFFF, 2px 2px gray;
+    font-size: calc(2em + 18px);
+    font-weight: 500;
+    text-align: center;
+    color: var(--colorDark);
+}
+
+/* ---------- Tema de Día ---------- */
+
+.body-day {
+    background-color: var(--colorLight);
+    color: var(--colorDark);
+}
+
+/* ---------- Estilos para tema de Noche ---------- */
+
+.body-night {
+    background-color: var(--colorDark);
+    color: var(--colorLight);
+}
+
+.body-night h2 {
+    color: var(--colorLight);
+    text-shadow: 1px 1px black, 2px 2px #808080;
+}
+
+.body-night .desc-tarjeta,
+.body-night .text-hist,
+.body-night .tarjeta-title,
+.body-night .cajaHover:hover > p {
+    color: var(--colorLight);
+}   
+
+.body-night .boton-ver,
+.body-night .reinicio {
+    background-color: var(--colorLight);
+    color: var(--btn-color);
+}   
+
+.body-night .container {
+    background-color: var(--fondovideo-color-noche);
+    }
+
+.body-night .barra {
+    background-color: var(--colorDarkTransparent2);
+}
+
+.body-night .fondoNav,
+.body-night .tarjeta-hist > img,
+.body-night .imagenes,
+.body-night .img-tarjeta {
+    box-shadow: 3px 3px 10px rgba(250, 250, 250, 0.25); /* Para que se distinga un poco del body cuando se hace el scroll */
+}
+
+.body-night .botonesVideo {
+    color: var(--btn-color);
+    border: 1px solid var(--colorLight);
+    box-shadow: 2px 2px #000000;
+}
+
+.body-night .caja {
+    border: 2px solid var(--colorDarkTransparent);
+    background-color: var(--colorDarkTransparent2);
+}
+
+.body-night .caja p {
+    color: var(--colorDark);
+    font-size: large;
+}
+
+.body-night .cajaHover:hover {
+    background-color: var(--colorDarkTransparent);
+}
+
+/* ---------- Navegación ---------- */
+nav {
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    transition: background-color 1s;
+}
+
+.fondoNav {
+    background-color: var(--colorLight);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Para que se distinga un poco del body cuando se hace el scroll */
+}
+
+.fondoNav > ul > li > a {
+    color: var(--colorDark);
+    text-shadow: 1px 1px white, 2px 3px gray;
+}
+
+.menu {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+    margin-right: 50px;
+}
+
+.item-menu {
+    list-style-type: none;
+}
+
+.item-link {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--colorLight);
+    text-shadow: 1px 1px gray, 2px 3px black;
+    cursor: pointer;
+}
+
+.item-menu:hover {
+    transform: translate(3px, 2px);
+}
+
+.item-menu:hover > .item-link {
+    text-shadow: 0.5px 0.5px var(--colorDark);
+}
+
+/* Toggle del theme para cambio de Dark a light mode */
+
+#switch-tema {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--btn-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    cursor: pointer;
+}
+
+#switch-tema svg:last-child {
+    display: none;
+}
+
+#switch-tema:hover {
+    transform: scale(1.1) rotate(20deg);
+    transition: 1s;
+}
+
+#switch-tema svg:hover {
+    fill: var(--colorDarkTransparent2);
+    transition: 0.1s;
+}
+
+.body-night #switch-tema svg:first-child {
+    display: none;
+}
+
+.body-night #switch-tema svg:last-child {
+    display: block;
+}
+
+/* ---------- Header ---------- */
+header {
+    background: url(./assets/imagenes/fondo.jpg) 50% 0 fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-2 {
+    background-image: url(./assets/imagenes/historia-programacion.jpg);
+    position: relative;
+    height: 70vh;
+}
+
+#header-3 {
+    background-image: url(./assets/imagenes/img2.jpg);
+    position: relative;
+    height: 70vh;
+}
+
+.fondo-azul {
+    background: rgba(47, 54, 69, 0.7);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: calc(3em + 18px);
+    color: var(--colorLight);
+    text-shadow: 2px 2px #808080, 6px 6px black;
+}
+
+.titulo-blanco {
+    text-align: center;
+}
+
+/* ---------- Main ---------- */
+main {
+    padding: 100px 20px;
+    perspective: 800px;
+}
+
+.espacio-titulo {
+    padding: 40px 10px;
+    transition: color 3s;
+}
+
+/* ---------- Tarjetas (Index) ---------- */
+.contenedor-padre {
+    margin: 100px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    width: 450px;
+    height: 500px;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transform: translate(-50000px);
+    
+}
+
+.img-tarjeta {
+    width: 100%;
+    height: 312px;
+    margin: 0px;
+    object-fit: cover;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.desc-tarjeta {
+    width: 90%;
+    text-align: center;
+    height: 30px;
+    color: #000000;
+}
+
+.boton-ver {
+    padding: 10px;
+    background-color: var(--btn-color);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 80%;
+    margin-bottom: 20px;
+    color: var(--colorLight);
+}
+
+.boton-ver:active {
+    box-shadow: 0px 0px #808080;
+    transform: translate(3px, 2px);
+}
+
+/* ---------- Página Historia ---------- */
+.cont-historia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.tarjeta-hist {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 80px 50px;
+    gap: 20px;
+    perspective: 800px;
+    perspective-origin: top;
+}
+
+.tarjeta-text-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    visibility: hidden;
+}
+
+.tarjeta-hist > img {
+    width: 50%;
+    visibility: hidden;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta-title {
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--colorDark);
+}
+
+.text-hist {
+    color: var(--colorDark);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.contenedor-texto-historia {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ---------- Video ---------- */
+
+.contenedorVideo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0px;
+    gap: 80px;
+}
+
+.container {
+    padding: 5px;
+    background-color: var(--fondovideo-color);
+    width: 70%;
+}
+
+.barra {
+    background-color: var(--colorDarkTransparent);
+    border-radius: 10px;
+    padding: 20px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botonera {
+    display: flex;
+    gap: 20px;
+}
+
+.botonesVideo {
+    box-shadow: 2px 2px #808080;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: var(--colorLight);
+    color: var(--btn-color);
+    font-weight: 300;
+    border: 1px solid var(--colorDark);
+    cursor: pointer;
+}
+
+.botonesVideo:active {
+    box-shadow: 0px 0px #808080;
+    transform: translate(3px, 2px);
+}
+
+#play, #pause {
+    width: 80px;
+}
+
+#showTime {
+    padding-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--colorLight);
+}
+
+/* ---------- Juego de Rompecabezas ---------- */
+.juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#seccion-superior {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+
+#seccion-inferior {
+    height: 200px;
+}
+
+.cajas {
+    display: flex;
+    flex-direction: row;
+    transition: opacity 1s;
+    gap: 20px;
+    transform: scale(1);
+    transition: gap 3s ease-out, transform 3s ease;
+}
+
+.caja {
+    width: 200px;
+    height: 350px;
+    display: flex;
+    border: 2px solid #000000;
+    background-color: #808080;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja img{
+    pointer-events: none;
+}
+
+.caja p {
+    color: var(--colorLight);
+    font-size: large;
+}
+
+.cajaHover:hover {
+    background-color: #1d1d1d;
+}
+
+.cajaHover:hover > p {
+    color: var(--colorDarkTransparent2);
+}
+
+.imagenes {
+    width: 200px;
+    height: 350px;
+    cursor: grab;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.imagenes:active {
+    cursor: grabbing;
+}
+
+#seccion-superior > #imagen1 {
+    transform: rotate(8deg);
+}
+
+#seccion-superior > #imagen2 {
+    transform: rotate(-10deg);
+}
+
+#seccion-inferior > img {
+    transform: rotate(93deg);
+}
+
+.reinicio {
+    display: flex;
+    margin: auto;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 0px;
+    background-color: var(--btn-color);
+    color: var(--colorLight);
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+    z-index: 99999;
+}
+
+/* ---------- Footer ---------- */
+.logo {
+    height: 80px;
+}
+
+footer {
+    background: var(--footer-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 90px;
+    color: var(--colorLight);
+}
+
+.footer-izq {
+    display: flex;
+    width: 300px;
+    height: 60px;
+    justify-content: space-between;
+}
+
+.titulo-foot {
+    font-size: 14px;
+}
+
+/* ---------- Animaciones ---------- */
+
+@keyframes aparecerDerecha {
+    0% {
+        transform: translate3d(500px, 0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes aparecerIzq {
+    0% {
+        transform: translate3d(-500px, 0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes aparecer1 {
+    0% {
+        transform: translate3d(-500px, 0, 500px);
+        visibility: visible;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+}
+
+@keyframes opacity1 {
+    0% {
+        transform: translate3d(500px, 0, -500px) rotateY(-45deg);
+        visibility: visible;
+    }
+    100% {
+        transform: translate3d(0, 0, 0) rotateY(0deg);
+        visibility: visible;
+    }
+}
+
+@keyframes aparecer2 {
+    0% {
+        transform: translate3d(500px, 0, 500px);
+        visibility: visible;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+}
+
+@keyframes opacity2 {
+    0% {
+        transform: translate3d(-500px, 0, -500px) rotateY(45deg);
+        visibility: visible;
+    }
+    100% {
+        transform: translate3d(0, 0, 0) rotateY(0deg);
+        visibility: visible;
+    }
+}
+
+@keyframes feliz {
+    50% {
+        transform: translate3d(0, 300px, 300px);
+    }
+    100% {
+        transform: translate3d(0, 300px, 0);
+    }
+}
+
+/* ---------- Logo animado SVG ---------- */
+
+.mon1 {
+    animation: part_1 ease-in 5s;
+    animation-iteration-count: 1;
+}
+
+.mon2 {
+    animation: part_2 ease-in 5s;
+    animation-iteration-count: 1;
+}
+
+line.cod {
+    animation-name: showCode;
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes part_1 {
+    0% {
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+    20% {
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+    30% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes part_2 {
+    0% {
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+    30% {
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+    40% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes showCode {
+    from {
+        stroke: transparent;
+    }
+    to {
+        stroke: green;
+    }
+}
+
+
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .menu {
+        width: 100%;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        margin-top: 5px;
+        margin-right: 0;
+    }
+
+    .footer-izq {
+        flex-direction: column;
+        height: fit-content;
+        gap: 20px;
+        align-items: center;
+    }   
+    
+    .titulo-foot {
+        font-size: calc(1.5em + 8px);
+    }       
+
+    #showTime {
+        font-size: 0.8em;
+        margin-left: 12px;
+    }   
+
+    h1 {
+        font-size: calc(1.5em + 15px);
+        line-height: 1.2;
+    }           
+
+    h2 {
+        font-size: calc(1.5em + 10px);
+    }
+
+    .contenedor-padre {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .botonera {
+        display: flex;
+        gap: 8px;
+    }
+
+    .tarjeta {
+        width: 90%;
+    }
+
+    .tarjeta-hist {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .tarjeta-hist > img {
+        width: 90%;
+    }
+
+    .cajas {
+        flex-direction: column;
+    }
+
+    #seccion-superior {
+        flex-direction: column;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    footer .logo {
+        height: 90px;
+    }   
+   
+    /* Para que en mobile no demoren tanto en aparecer las tarjetas de historia, se modificaron tiempos y animaciones */
+
+    /* Reducir espaciado entre tarjetas */
+    .cont-historia {
+        padding-top: 30px; /* Reducido de 80px */
+    }
+    
+    .tarjeta-hist {
+        padding: 25px 15px; /* Reducido de 40px */
+    }
+    
+    /* Animaciones más sutiles y rápidas en móvil */
+    @keyframes aparecer1 {
+        from {
+            transform: translateX(-100px); /* Más simple */
+            opacity: 0;
+            visibility: visible;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    
+    @keyframes opacity1 {
+        from {
+            transform: translateX(100px); /* Más simple */
+            opacity: 0;
+            visibility: visible;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    
+    @keyframes aparecer2 {
+        from {
+            transform: translateX(100px);
+            opacity: 0;
+            visibility: visible;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    
+    @keyframes opacity2 {
+        from {
+            transform: translateX(-100px);
+            opacity: 0;
+            visibility: visible;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    
+    /* Hacer las animaciones más rápidas */
+    .tarjeta-hist > img,
+    .tarjeta-text-section {
+        animation-duration: 0.5s !important;
+    }
+}
+
+
